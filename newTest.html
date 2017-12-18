@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>收货地址</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/common/common.css">
+    <link rel="stylesheet" href="css/common/swiper-3.4.2.min.css">
+
+    <link rel="stylesheet" href="css/guanjia.css">
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1 swiper-no-swiping">
+                <div class="areaList">
+
+                <!-- <div class="area-item item">
+                    <div class="personal_info same">
+                        <div class="name ">张三</div>
+                        <div class="phone ">1808650XXXX</div>
+                    </div>
+                    <div class="specific_area same">
+                        湖北省武汉市洪山区关山街道关山一路74号保利花园23栋203
+                    </div>
+                    <div class="operate same">
+                        <div class="moren ">
+                            <div class="shezhi act"></div>
+                            <span class=" ">默认地址</span>
+                        </div>
+                        <div class="editDel ">
+                            <div class="edit ">
+                                <span class="icon"></span>
+                                <span class="">编辑</span>
+                            </div>
+                            <div class="del ">
+                                <span class="icon"></span>
+                                <span class="">删除</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="area-item item">
+                    <div class="personal_info same">
+                        <div class="name ">李四</div>
+                        <div class="phone ">1808650XXXX</div>
+                    </div>
+                    <div class="specific_area same">
+                        湖北省武汉市洪山区关山街道关山一路74号保利花园23栋203
+                    </div>
+                    <div class="operate same">
+                        <div class="moren ">
+                            <div class="shezhi"></div>
+                            <span class=" ">设为默认</span>
+                        </div>
+                        <div class="editDel ">
+                            <div class="edit btn ">
+                                <span class="icon"></span>
+                                <span class="">编辑</span>
+                            </div>
+                            <div class="del btn ">
+                                <span class="icon"></span>
+                                <span class="">删除</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+
+            </div>
+                <div class="addArea">
+                    <div class="icon"></div>添加新地址
+                </div>
+                <a href="zhifu.html">
+                    <div class="zhifu">
+                        去支付
+                    </div>
+                </a></div>
+            <div class="swiper-slide slide2 swiper-no-swiping">
+                <div class="form formlist pad20">
+                    <div class="shouHuoName formInput form-item">
+                        <span>收货人</span><input type="text">
+                    </div>
+                    <div class="contactPhone formInput form-item">
+                        <span>联系电话</span><input type="text">
+                    </div>
+                    <div class="suoZaiArea formInput form-item">
+                        <span>所在地区</span><input readonly id="J_Address" class="choiceArea" placeholder="请选择"><span class="arrow"></span>
+                    </div>
+                    <div class="specific form-item">
+                        <span class="formInput" >详细地址</span>
+                        <textarea  name="" id=""  rows="" placeholder="详细地址"></textarea>
+                    </div>
+                </div>
+                <div class="szMrfl pad20">
+                    <span class="particle">设为默认地址</span>
+                    <span class="shezhi"></span>
+                </div>
+                <div class="save">
+                    保 存
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/common/jquery-3.1.0.min.js"></script>
+    <script src="js/common/jquery.tmpl.min.js"></script>
+    <script src="js/common/swiper-3.4.2.min.js"></script>
+    <!--<script src="js/common/resize.js"></script>   -->
+
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/ydui.citys.js"></script>
+    <script src="js/ydui.js"></script>
+</body>
+
+<script id="demo" type="text/x-jquery-tmpl">
+    <div class="area-item item" >
+            <div class="personal_info same">
+                <div class="name">${name}</div>
+                <div class="phone">${contactPhone}</div>
+            </div>
+            <div class="specific_area same">
+               ${choiceArea} ${specificArea}
+            </div>
+            <div class="operate same">
+
+                {{if mrFlag}}
+                    <div class="moren ">
+                        <div class="shezhi act"></div>
+                        <span class=" ">默认地址</span>
+                    </div>
+                {{else}}
+                     <div class="moren ">
+                        <div class="shezhi"></div>
+                        <span class=" ">设为默认</span>
+                    </div>
+                {{/if}}
+                <div class="editDel ">
+                    <div class="edit ">
+                        <span class="icon"></span>
+                        <span class="">编辑</span>
+                    </div>
+                    <div class="del ">
+                        <span class="icon"></span>
+                        <span class="">删除</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</script>
+
+<script>
+    var $bodyHight=$("body").height();
+    $("body").css("height",$bodyHight);
+    //三个加  $index改为$editIndex
+
+    //清除字符串
+    function Trim(str,is_global) {
+        var result;
+        result = str.replace(/(^\s+)|(\s+$)/g,"");
+        if(is_global.toLowerCase()=="g") {
+            result = result.replace(/\s/g,"");
+        }
+        return result;
+    }
+
+    var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'horizontal'
+    });
+
+    var arr=[];         //定义数组
+    var mrFlag=false;  //默认地址标记
+
+
+    /*  slide 1*/
+    //设置地址功能
+    $(".areaList").on("click",".moren",function(e){
+        e.preventDefault();
+        var $index=$(this).parents(".area-item").index();
+       // e.preventDefault();
+        if($(this).find(".shezhi").hasClass("act")){
+            return;
+           // $(this).find(".shezhi").removeClass("act").siblings().removeClass("red").text("设为默认");
+        }else{
+            $(this).find(".shezhi").addClass("act").siblings().addClass("red").text("默认地址")
+                    .parents(".area-item").siblings().find(".shezhi").removeClass("act").siblings().removeClass("red").text("设为默认");
+
+            //加
+            for(var key in arr){
+                arr[key]["mrFlag"]=false;
+            }
+            arr[$index].mrFlag=true;
+        }
+    });
+
+    //删除功能
+    $(".areaList").on("click",".del",function(e){
+        e.preventDefault();
+        var $index=$(this).parents(".area-item").index();
+        $(this).parents(".area-item").remove();
+
+        console.log($index);
+       // if($index>=2){       //判断条件是因为 初始有两条数据 （之后会清除）
+            arr.splice($index, 1);
+      //  }
+        console.log(arr);
+
+        localStorage.setItem("newArr",JSON.stringify(arr));  ////点击清除时，删除数据后重新设置缓存中的数据
+        JSON.parse(localStorage.getItem("newArr"));
+    });
+
+    //编辑功能
+    $(".areaList").on("click",".edit",function(e) {
+        e.preventDefault();
+        var $editIndex;
+        $editIndex=$(this).parents(".area-item").index();
+
+        //先获取内容编辑
+        $(".shouHuoName input").val(arr[$editIndex].name);
+        $(".contactPhone input").val(arr[$editIndex].contactPhone);
+        $(".choiceArea").val(arr[$editIndex].choiceArea);
+        $(".specific textarea").val(arr[$editIndex].specificArea);
+        if(arr[$editIndex].mrFlag){
+            $(".slide2").find(".shezhi").addClass("act").siblings().addClass("red");
+            mrFlag=true;
+
+        }else{
+            $(".slide2").find(".shezhi").removeClass("act").siblings().removeClass("red");
+            mrFlag=false;
+        }
+        //console.log(mrFlag);
+        //划过去
+        mySwiper.slideNext();
+
+        //划过去后再删除
+        $(this).parents(".area-item").remove();
+
+        console.log($editIndex);
+        arr.splice($editIndex, 1);
+        localStorage.setItem("newArr",JSON.stringify(arr));  ////点击清除时，删除数据后重新设置缓存中的数据
+        JSON.parse(localStorage.getItem("newArr"));
+
+    });
+
+    //添加地址
+    $(".addArea").on("click",function(){
+        mySwiper.slideNext();
+        $(".shouHuoName input,.contactPhone input,.choiceArea,.specific textarea").val(""); //清空内容
+        $(".slide2").find(".shezhi").removeClass("act").siblings().removeClass("red");
+
+        mrFlag=false;
+    });
+
+
+     /*  slide 2*/
+    //地区选择
+    var $target = $('#J_Address');
+    $target.citySelect();
+    $target.on('click', function (event) {
+        event.stopPropagation();
+        $target.citySelect('open');
+    });
+    $target.on('done.ydui.cityselect', function (ret) {
+        $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+    });
+
+    //解决引入插件后点击两次出现光标的问题
+    $("input,textarea").on("click",function(){
+        $(this).focus();
+    });
+
+    //设为默认地址
+    $(".szMrfl").find(".shezhi").on("click",function(e){
+
+        if($(this).hasClass("act")){
+            $(this).removeClass("act").siblings().removeClass("red");
+            mrFlag=false;
+        }else{
+            $(this).addClass("act").siblings().addClass("red");
+            mrFlag=true;
+            $(".areaList").find(".shezhi").removeClass("act").siblings().removeClass("red")
+        }
+       // console.log(mrFlag);
+    });
+
+    //保存
+    arr=JSON.parse(localStorage.getItem("newArr"))||[];
+    $(".save").on("click",function(e) {
+        e.preventDefault();
+        var shouHuoName = $(".shouHuoName input").val();
+        var contactPhone = $(".contactPhone input").val();
+        var choiceArea = $(".choiceArea").val();
+        var specificArea = $(".specific textarea").val();
+
+        //填写规则
+         if(!shouHuoName){
+             alert("请填写收货人");
+             return false;
+         }
+         if(!contactPhone){
+             alert("请填写联系电话");
+             return false;
+         }else{
+             var reg =  /^1\d{10}$/;
+             if (!reg.test(contactPhone)) {
+                 alert("电话号码格式错误，请重新输入！");
+                 return false;
+             }
+         }
+         if(!choiceArea){
+             alert("请选择地区");
+             return false;
+         }
+         if(!specificArea){
+             alert("请填写详细地址");
+             return false;
+         }
+
+
+        var reportData = {
+            name: shouHuoName,
+            contactPhone: contactPhone,
+            choiceArea: choiceArea,
+            specificArea: specificArea,
+            mrFlag:mrFlag
+        };
+        console.log(reportData);
+
+     /*  if( JSON.stringify(arr).indexOf( Trim(JSON.stringify(reportData),"g") )!=-1 ){  //如果对象存在，return  (没什么用)
+          // $(".areaList").empty();
+          // $("#demo").tmpl( JSON.parse(localStorage.getItem("newArr")) ).appendTo('.areaList');
+           mySwiper.slidePrev();
+           return;
+       }                                                                         //否则放入数组
+     */
+
+        //如果设置新添加的地址为默认地址，让数组里其他对象里的flag为false(没什么用)
+        if(mrFlag){
+            $(".areaList").empty(); //加
+            for(var key in arr){
+                if(arr[key]["mrFlag"]==true){
+                    arr[key]["mrFlag"]=false;
+                }
+            }
+        }
+        arr.push(reportData);
+        console.log(arr);
+
+        localStorage.setItem("newArr",JSON.stringify(arr));  //先存储每次添加的地址数据到数组
+
+     // $("#demo").tmpl(reportData).appendTo('.areaList');      //下面两句替换
+        $(".areaList").empty();   //加
+        $("#demo").tmpl( JSON.parse(localStorage.getItem("newArr")) ).appendTo('.areaList');  //加
+
+        mySwiper.slidePrev();
+    });
+
+    console.log( JSON.parse( localStorage.getItem("newArr") )); //获取添加的地址数据到数组
+    $("#demo").tmpl( JSON.parse(localStorage.getItem("newArr")) ).appendTo('.areaList');  //刷新 为了刷新页面时添加的地址数据有效存储
+
+    if(!arr.length){   //第一次打开页面时先清除内容//arr=[]也为真
+        $(".areaList").empty();
+    }
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+.background {
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.icon {
+  width: 1.53rem;
+  height: 1.53rem;
+  margin: 1.2rem auto 0; }
+  .icon img {
+    width: 100%;
+    height: 100%; }
+
+p {
+  margin: .4rem 0;
+  text-align: center;
+  font-size: .32rem;
+  color: #09bb07; }
+
+span {
+  text-align: center;
+  font-size: .58rem;
+  color: #333;
+  display: block; }
+
+.btn {
+  margin: 1.6rem auto 0;
+  width: 6.26rem;
+  height: .90rem;
+  line-height: .90rem;
+  background-color: #09bb07;
+  font-size: .36rem;
+  color: #fff;
+  text-align: center; }
+
+/*# sourceMappingURL=zhifu.css.map */

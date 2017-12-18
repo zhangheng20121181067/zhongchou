@@ -1,0 +1,278 @@
+.rotate180 {
+  transform: rotate(180deg);
+}
+
+.background, body .banner, body .main .wrap .proDetail .xiaoman .intro .fazhi .icon, body .main .wrap .proDetail .picShow .showMore, body .toTop {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body .banner {
+  background-image: url(../images/banner.jpg);
+  height: 4.82rem;
+}
+
+body .main {
+  padding-bottom:.98rem;
+ /* padding-bottom: 1.62rem;*/
+}
+
+body .main .wrap {
+  margin: 0 .2rem;
+}
+
+body .main .wrap .zhuti h4 {
+  color: #333333;
+  font-size: 0.36rem;
+  font-weight: 800;
+  line-height: .7rem;
+}
+
+body .main .wrap .zhuti .proOver {
+  display: block;
+  margin-top: .16rem;
+  width: 1.30rem;
+  height: .44rem;
+  line-height: .44rem;
+  text-align: center;
+  border: 1px solid #ee1010;
+  border-radius: .1rem;
+  color: #ee1010;
+  font-size: 0.28rem;
+}
+
+body .main .wrap .yichou {
+  height: .7rem;
+}
+
+body .main .wrap .yichou span {
+  display: block;
+  color: #333333;
+  font-size: 0.32rem;
+  line-height: .7rem;
+  float: left;
+}
+
+body .main .wrap .yichou span.ycjine {
+  color: #ee1010;
+  font-size: 0.36rem;
+}
+
+body .main .wrap .jianjie {
+  margin: .2rem 0;
+}
+
+body .main .wrap .jianjie .sheji {
+  display: block;
+  margin-right: .2rem;
+  width: .68rem;
+  height: .34rem;
+  margin-top: .05rem;
+  text-align: center;
+  border: 1px solid #66ccff;
+  border-radius: .1rem;
+  color: #66ccff;
+  font-size: 0.26rem;
+}
+
+body .main .wrap .jianjie p {
+  line-height: .44rem;
+  font-size: 0.28rem;
+  color: #666;
+}
+
+body .main .wrap .line {
+  height: 1px;
+  background-color: #e6e6e6;
+}
+
+body .main .wrap .mubiao {
+  margin: 0 .12rem;
+}
+
+body .main .wrap .mubiao .jinshi {
+  margin: .3rem .64rem 0;
+}
+
+body .main .wrap .mubiao .jinshi span {
+  display: block;
+  line-height: .4rem;
+  font-size: 0.28rem;
+  color: #666;
+  float: left;
+}
+
+body .main .wrap .mubiao .jinshi span.lan {
+  font-size: 0.28rem;
+  color: #65cdff;
+}
+
+body .main .wrap .mubiao .people {
+  margin-top: .3rem;
+}
+
+body .main .wrap .mubiao .people .parent {
+  width: 5.84rem;
+  height: .4rem;
+  border-radius: .2rem;
+  background-color: #f3f3f3;
+  position: relative;
+}
+
+body .main .wrap .mubiao .people .parent .zhanbi {
+  width: 71.1%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  border-radius: .2rem;
+  background-color: #65cdff;
+  animation: run 3s ease-in-out;
+}
+
+body .main .wrap .mubiao .people .num {
+  line-height: .4rem;
+  color: #65cdff;
+  font-size: 0.26rem;
+}
+
+body .main .wrap .proDetail {
+  margin-top: .5rem;
+}
+
+body .main .wrap .proDetail h3 {
+  text-align: left;
+  color: #333333;
+  font-size: 0.34rem;
+}
+
+body .main .wrap .proDetail .xiaoman {
+  margin-top: .2rem;
+}
+
+body .main .wrap .proDetail .xiaoman img {
+  width: .45rem;
+  height: .55rem;
+}
+
+body .main .wrap .proDetail .xiaoman .intro {
+  margin-left: .65rem;
+}
+
+body .main .wrap .proDetail .xiaoman .intro h4 {
+  font-size: 0.3rem;
+  color: #666;
+}
+
+body .main .wrap .proDetail .xiaoman .intro .fazhi {
+  margin: .2rem 0;
+  font-size: 0.26rem;
+  color: #666;
+}
+
+body .main .wrap .proDetail .xiaoman .intro .fazhi .faqi {
+  margin-right: .66rem;
+}
+
+body .main .wrap .proDetail .xiaoman .intro .fazhi .faqi .icon {
+  background-image: url(../images/icon/Initiated@2x.png);
+}
+
+body .main .wrap .proDetail .xiaoman .intro .fazhi .zhichi .icon {
+  background-image: url(../images/icon/support@2x.png);
+}
+
+body .main .wrap .proDetail .xiaoman .intro .fazhi .icon {
+  background-size: contain;
+  width: .33rem;
+  height: .33rem;
+  margin-right: .18rem;
+}
+
+body .main .wrap .proDetail .xiaoman .intro .fazhi span {
+  display: block;
+  height: .32rem;
+  line-height: .32rem;
+}
+
+body .main .wrap .proDetail .xiaoman .intro p {
+  font-size: 0.26rem;
+  color: #666;
+  line-height: .44rem;
+  padding-bottom: .1rem;
+  border-bottom: 1px dotted #e6e6e6;
+}
+
+body .main .wrap .proDetail .picShow .chuNone {
+  display: none;
+}
+
+body .main .wrap .proDetail .picShow .pic {
+  width: 7.1rem;
+}
+
+body .main .wrap .proDetail .picShow .pic.first {
+  height: 4.75rem;
+  background-repeat: no-repeat;
+  background-image: url(../images/pic01.jpg);
+}
+
+body .main .wrap .proDetail .picShow .pic.second {
+  height: 5.09rem;
+  background-repeat: no-repeat;
+  background-image: url(../images/pic02.jpg);
+}
+
+body .main .wrap .proDetail .picShow .pic.third {
+  height: 6.79rem;
+  background-repeat: no-repeat;
+  background-image: url(../images/pic03.jpg);
+}
+
+body .main .wrap .proDetail .picShow .showMore {
+  width: 100%;
+  /*position: fixed;
+  bottom: .98rem;*/
+  height: .64rem;
+  background-image: url(../images/downArea.png);
+  background-size: 5% 30%;
+  cursor: pointer;
+}
+
+body .footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: .98rem;
+  background-color: #fe3e2f;
+}
+
+body .footer a {
+  display: block;
+  text-align: center;
+  line-height: .98rem;
+  font-size: 0.36rem;
+  color: #fff;
+}
+
+body .toTop {
+  width: .56rem;
+  height: .56rem;
+  position: fixed;
+  bottom: 1.80rem;
+  right: .2rem;
+  background-image: url(../images/icon/top@2x.png);
+  background-size: contain;
+  display: none;
+}
+
+@-webkit-keyframes run {
+  0% {
+    width: 0;
+  }
+  /* 25%{  width:10%;  }
+   50%{  width:25%;  }
+   75%{  width:45%;  }*/
+  100% {
+    width: 71.1%;
+  }
+}

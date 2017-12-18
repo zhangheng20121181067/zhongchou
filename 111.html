@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/common/swiper-3.4.2.min.css">
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="http://www.h5edu.cn/usercode/a54111bbe7ec5fb7ebd9accb9ca140f1ef23eadb/#slide3" target='_blank'>
+                点我跳到第三页</a>
+        </div>
+        <div class="swiper-slide">H5EDU 2</div>
+        <div class="swiper-slide" data-hash="slide3">H5EDU 3</div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<script src="js/common/jquery-3.1.0.min.js"></script>
+<script src="js/common/swiper-3.4.2.min.js"></script>
+</body>
+<script>
+    var swiper = new Swiper('.swiper-container',{
+        pagination:'.swiper-pagination',
+        paginationClickable:true,
+        spaceBetween:30,
+        hashnav:true
+    });
+
+    function Trim(str,is_global) {
+        var result;
+        result = str.replace(/(^\s+)|(\s+$)/g,"");
+        if(is_global.toLowerCase()=="g") {
+            result = result.replace(/\s/g,"");
+        }
+        return result;
+    }
+
+    var arr=[{"name":"111"},{"name":"222"},{"name":"333"},{"name":"444"},{"name":"333"}];
+
+    for(var key in arr){
+        if(arr[key]["name"]=="333"){
+            arr[key]["name"]="72398479837592";
+        }
+    }
+    console.log(arr);
+
+    var obj={"name":" 1 1  1"};
+
+    console.log(JSON.stringify(arr).indexOf( Trim(JSON.stringify(obj),"g") )!=-1);
+
+
+    var b=[];
+
+
+
+    if(b.length==0){
+        console.log("b为真")
+    }
+
+</script>
+</html>

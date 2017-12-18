@@ -1,0 +1,30 @@
+
+body{  background-color: #f2f2f2;  font-size: .30rem;   }
+.pad20{  padding: 0 .20rem; background-color: #fff;  }
+.red{  color: #ef5728; }
+
+.formlist{  -webkit-display:flex;  display:flex;  flex-direction: column;  }
+.formlist span{  width:1.40rem; font-size: .30rem;  color:#333;  }
+
+.formInput{height:.80rem; border-bottom: 1px solid #d4d4d4}
+.form-item{  display:flex;   align-items: center}
+.form-item input{  flex-grow: 1; height:.8rem; }
+.form-item input:focus{  outline: none;;  }
+.specific.form-item{  flex-direction: column;  align-items: flex-start;  }
+.specific span{ border-bottom: none;  line-height:.80rem;  }
+.specific textarea{  text-align: left;  height:1.94rem;  width:100%;  padding:.1rem 0;  border:none;  }
+.specific textarea:focus{  outline: none;  }
+
+.formlist .choiceArea{  -webkit-flex-grow:1 ;  text-align: right; font-size: .28rem; }
+.formlist .arrow{width:.35rem;  height:.28rem;background:url(../images/rightArrow.png)  no-repeat  right center ;
+    background-size: contain;
+}
+
+
+.szMrfl{  height:.80rem; margin-top:.30rem;  display:flex;  align-items: center;  justify-content: space-between;  }
+.szMrfl span{  font-size: .30rem;  }
+.szMrfl .shezhi {  width: .24rem;  height: .24rem;  border: 1px solid #000;  border-radius: 3px;  }
+.szMrfl .shezhi.act { background:#ef5728 url(../images/areaDuiHao.png) no-repeat center;  background-size: contain;}
+
+.save {  width: 100%;  position: fixed;  bottom: 0;  height: .98rem;  background-color: #fe3e2f;  color: #fff;
+    text-align: center;  line-height: .98rem;  font-size: .36rem;  }
